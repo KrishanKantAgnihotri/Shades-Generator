@@ -38,11 +38,12 @@ function App() {
           </button>
         </form>
       </section>
-      let half = (colors.length)/2
-
       <section className="colors">
-        {           list.map((color, index,half) => {
-            return <SingleColor key={index} {...color} index={index} hexColor={color.hex} half ={half} />
+        {
+
+          list.map((color, index) => {
+
+            return <SingleColor key={index} {...color} index={index} hexColor={color.hex} gap={gap} />
           })
         }
       </section>
