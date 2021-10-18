@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import rgbToHex from './utils'
 
-const SingleColor = ({ rgb, weight, index, hexColor,half }) => {
+const SingleColor = ({ rgb, weight, index, hexColor, gap }) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(",");
   const hex = `#${hexColor}`;
@@ -11,7 +11,8 @@ const SingleColor = ({ rgb, weight, index, hexColor,half }) => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [alert]);
-  return <article className={`color ${index > half && "color-light"}`} style={{ backgroundColor: `rgb(${bcg})` }} onClick={() => {
+  // console.log(gap);
+  return <article className={`color ${index > (100 / gap) && "color-light"}`} style={{ backgroundColor: `rgb(${bcg})` }} onClick={() => {
     setAlert(true);
     navigator.clipboard.writeText(hex);
 
