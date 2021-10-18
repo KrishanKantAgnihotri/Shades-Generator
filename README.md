@@ -1,3 +1,3 @@
-#### Values JS
+#### Shades Generator
 
-[values.js](https://github.com/noeldelgado/values.js)
+
