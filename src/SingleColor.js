@@ -11,7 +11,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [alert]);
-  return <article className={`color ${index > 9 && "color-light"}`} style={{ backgroundColor: `rgb(${bcg})` }} onClick={() => {
+  return <article className={`color ${index > half && "color-light"}`} style={{ backgroundColor: `rgb(${bcg})` }} onClick={() => {
     setAlert(true);
     navigator.clipboard.writeText(hex);
 
