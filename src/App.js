@@ -38,9 +38,10 @@ function App() {
           </button>
         </form>
       </section>
+      let half = (colors.length)/2
+
       <section className="colors">
-        { let half = (colors.length)/2
-          list.map((color, index,half) => {
+        {           list.map((color, index,half) => {
             return <SingleColor key={index} {...color} index={index} hexColor={color.hex} half ={half} />
           })
         }
