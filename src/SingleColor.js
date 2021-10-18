@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import rgbToHex from './utils'
 
-const SingleColor = ({ rgb, weight, index, hexColor }) => {
+const SingleColor = ({ rgb, weight, index, hexColor,half }) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(",");
   const hex = `#${hexColor}`;
