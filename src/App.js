@@ -6,6 +6,7 @@ import Values from 'values.js'
 function App() {
   const [color, setColor] = useState("");
   const [gap, setGap] = useState(10);
+  const [rgap,setRGap] = useState(10);
   const [error, setError] = useState(false);
   const [list, setList] = useState(new Values('#123456').all(10));
   const handleSubmit = (e) => {
@@ -13,6 +14,8 @@ function App() {
     try {
       let colors = new Values(color).all(gap);
       setList(colors);
+      setRGap(gap);
+      setError(false);
     }
     catch (error) {
       setError(true);
@@ -43,7 +46,7 @@ function App() {
 
           list.map((color, index) => {
 
-            return <SingleColor key={index} {...color} index={index} hexColor={color.hex} gap={gap} />
+            return <SingleColor key={index} {...color} index={index} hexColor={color.hex} gap={rgap} />
           })
         }
       </section>
